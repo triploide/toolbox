@@ -1,0 +1,37 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Toolbox\Resolvers;
+
+use Illuminate\Support\Str;
+use Toolbox\Pathfinders\Pathfinder;
+
+class ActionResolver extends Resolver
+{
+    public function __construct(private Pathfinder $pathfinder)
+    {
+    }
+
+    public function candidates(string $tool): array
+    {
+        $action = Str::studly($tool);
+
+        $appFolder = $this->pathfinder->getAppFolder();
+        $environment = $this->pathfinder->getEnvironment();
+        $context = $this->pathfinder->getContext();
+        $resource = $this->pathfinder->getResource();
+
+        $candidates = [
+            "{$appFolder}\\Actions\\{$environment}\\{$context}\\{$action}{$resource}", // e.g. App\Actions\Api\Admin\CreatePostAction
+            "{$appFolder}\\Actions\\Core\\{$action}{$resource}", // e.g. App\Actions\Core\PostValidator
+        ];
+
+        return $candidates;
+    }
+
+    protected function defaultCandidate(string $tool): string
+    {
+        return array_last($this->candidates($tool));
+    }
+}

@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespaceRoot }}\Policies\{{ enviroment }}\{{ context }};
+
+use App\Models\User;
+
+class {{ resource }}Policy
+{
+    /**
+     * Create a new policy instance.
+     */
+    public function __construct()
+    {
+        //
+    }
+}

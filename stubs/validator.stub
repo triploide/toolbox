@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespaceRoot }}\Validators\{{ enviroment }}\\{{ context }};
+
+use Toolbox\Validators\ValidatorContract;
+
+class {{ resource }}Validator implements ValidatorContract
+{
+    public function getRules(string $action): array
+    {
+        return match ($action) {
+            default => [],
+        };
+    }
+
+    public function getMessages(string $action): array
+    {
+        return [];
+    }
+
+    public function getAttributes(string $action): array
+    {
+        return [];
+    }
+}

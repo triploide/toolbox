@@ -1,0 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespaceRoot }}\Actions\{{ enviroment }}\{{ context }};
+
+use Toolbox\Actions\Action;
+
+class Update{{ resource }} extends Action
+{
+    public function handle(): mixed
+    {
+        $this->model()->fill($this->data()->all());
+
+        $this->model()->save();
+
+        return $this->model();
+    }
+}

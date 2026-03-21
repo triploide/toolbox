@@ -1,0 +1,41 @@
+{
+    "name": "kamecode/toolbox",
+    "version": "0.0.1",
+    "description": "A Laravel CRUD toolkit that auto-resolves controllers, dataproviders, repositories, validators, filters, and more by convention.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maximiliano Yañez"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0",
+        "illuminate/routing": "^11.0|^12.0",
+        "illuminate/cache": "^11.0|^12.0",
+        "illuminate/validation": "^11.0|^12.0",
+        "illuminate/auth": "^11.0|^12.0",
+        "fico7489/laravel-eloquent-join": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Toolbox\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Toolbox\\ToolboxServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

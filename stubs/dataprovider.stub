@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespaceRoot }}\Dataproviders\{{ enviroment }}\{{ context }};
+
+use Toolbox\Dataproviders\CrudDataprovider as Dataprovider;
+
+class {{ resource }}Dataprovider extends Dataprovider
+{
+    
+}
