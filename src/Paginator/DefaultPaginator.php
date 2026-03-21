@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Toolbox\Paginator;
 
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class DefaultPaginator extends Paginator
 {
-    public function paginate(array $paginationData): LengthAwarePaginator
+    public function paginate(array $paginationData): mixed
     {
         $perPage = $paginationData['per_page'] ?? 15;
         $columns = ['*'];
@@ -16,6 +15,6 @@ class DefaultPaginator extends Paginator
         $page = $paginationData['page'] ?? 1;
         $total = null;
 
-        return $this->query->paginate($perPage, $columns, $pageName, $page, $total);
+        return $this->dataprovider->paginate($perPage, $columns, $pageName, $page, $total);
     }
 }

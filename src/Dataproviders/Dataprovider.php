@@ -78,12 +78,16 @@ class Dataprovider
 
     public function fetchAll()
     {
-        return $this->execute('get');
+        if (request()->has('pagination')) {
+            return $this->makePagination(request()->input('pagination'));
+        } else {
+            return $this->execute('get');
+        }
     }
 
-    public function paginate(array $paginationData): LengthAwarePaginator|CursorPaginator
+    public function makePagination(array $paginationData): mixed
     {
-        return Paginator::make($this->query())->paginate($paginationData);
+        return Paginator::make($this)->paginate($paginationData);
     }   
 
     /**

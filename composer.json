@@ -1,6 +1,6 @@
 {
     "name": "kamecode/toolbox",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A Laravel CRUD toolkit that auto-resolves controllers, dataproviders, repositories, validators, filters, and more by convention.",
     "type": "library",
     "license": "MIT",
