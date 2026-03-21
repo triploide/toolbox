@@ -33,7 +33,7 @@ trait AuthorizationManager
             
             $policy = new $policyClass;
 
-            $ability ??= $this->method;
+            $ability ??= $this->action;
 
             $response = $policy->$ability(request()->user(), $model);
 

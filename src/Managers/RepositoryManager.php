@@ -19,6 +19,10 @@ trait RepositoryManager
     private function mutate(): void
     {
         if ($repository = $this->getRepository()) {
+            if (!method_exists($repository, $this->action)) {
+                return;
+            }
+
             $action = $this->action;
 
             $response = $repository->$action();

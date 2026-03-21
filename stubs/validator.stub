@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {{ namespaceRoot }}\Validators\{{ enviroment }}\\{{ context }};
+namespace {{ namespaceRoot }}\Validators\{{ enviroment }}\{{ context }};
 
 use Toolbox\Validators\ValidatorContract;
 
