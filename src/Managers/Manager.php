@@ -13,8 +13,8 @@ trait Manager
      * Determine if a tool must be applied or not.
      * 
      * The determination is based on the following order:
-     * 1. A method with the name use{Tool}() (e.g. useValidator())
-     * 2. A property with the name $use{Tool} (e.g. $useValidator)
+     * 1. A method with the name use{Tool}() (e.g. useDataprovider())
+     * 2. A property with the name $use{Tool} (e.g. $useDataprovider)
      * 3. The default value passed as a parameter (e.g. true)
      * 
      * @param string $tool
@@ -39,10 +39,10 @@ trait Manager
     /**
      * Resolve a class name from the controller properties or methods.
      * The resolution order is the following:
-     * 1. A method with the same name as the tool (e.g. validator())
-     * 2. A property with the same name as the tool (e.g. $validator)
-     * 3. A method with the name get{Tool}FullyQualifiedName() (e.g. getValidatorFullyQualifiedName())
-     * 4. The default fully qualified name (e.g. App\Validators\Domain\Profile\ModelValidator)
+     * 1. A method with the same name as the tool (e.g. dataprovider())
+     * 2. A property with the same name as the tool (e.g. $dataprovider)
+     * 3. A method with the name get{Tool}FullyQualifiedName() (e.g. getDataproviderFullyQualifiedName())
+     * 4. The default fully qualified name (e.g. App\Dataproviders\Domain\Profile\ModelDataprovider)
      * 
      * @param string $tool
      * @param Closure|null $callback

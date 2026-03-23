@@ -8,10 +8,10 @@ use Triploide\Toolbox\Filters\Filter;
 
 /**
  *
- * @property bool $useValidator
- * @method bool useValidator()
- * @property string $validator
- * @method string validator()
+ * @property bool $useFilter
+ * @method bool useFilter()
+ * @property string $filter
+ * @method string filter()
  * 
  */
 

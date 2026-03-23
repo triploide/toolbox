@@ -24,8 +24,8 @@ class DefaultResolver extends Resolver
         $resource = $this->pathfinder->getResource();
 
         $candidates = [
-            "{$appFolder}\\{$folder}\\{$environment}\\{$context}\\{$resource}{$classname}", // e.g. App\Validators\Web\Admin\PostValidator
-            "{$appFolder}\\{$folder}\\Core\\{$resource}{$classname}", // e.g. App\Validators\Core\PostValidator
+            "{$appFolder}\\{$folder}\\{$environment}\\{$context}\\{$resource}{$classname}", // e.g. App\Dataproviders\Web\Admin\PostDataprovider
+            "{$appFolder}\\{$folder}\\Core\\{$resource}{$classname}", // e.g. App\Dataproviders\Core\PostDataprovider
         ];
 
         return $candidates;

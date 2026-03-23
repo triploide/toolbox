@@ -13,7 +13,7 @@ class ApiController extends Controller
     use ManagerTraits\PathfinderManager;
     use ManagerTraits\ModelManager;
     use ManagerTraits\AuthorizationManager;
-    use ManagerTraits\ValidatorManager;
+    use ManagerTraits\RequestManager;
     use ManagerTraits\DataproviderManager;
     use ManagerTraits\ResponseManager;
     use ManagerTraits\RepositoryManager;

@@ -119,9 +119,9 @@ class ToolMaker
     private function saveFile(string $stub, Tool $tool)
     {
         // TODO: refactor
-        $path = app_path($tool->folder() . '/' . $this->enviroment . '/' . $this->context); // e.g app/Validators/Api/Customer
-        $filename = $this->resource . $tool->name()  . '.php'; // e.g OrderValidator.php
-        $uri = "$path/$filename"; // e.g app/Validators/Api/Customer/OrderValidator.php
+        $path = app_path($tool->folder() . '/' . $this->enviroment . '/' . $this->context); // e.g app/Dataproviders/Api/Customer
+        $filename = $this->resource . $tool->name()  . '.php'; // e.g OrderDataprovider.php
+        $uri = "$path/$filename"; // e.g app/Dataproviders/Api/Customer/OrderDataprovider.php
 
         if (!file_exists($uri)) {
             if (!is_dir($path)) {

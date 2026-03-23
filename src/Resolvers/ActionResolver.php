@@ -23,8 +23,8 @@ class ActionResolver extends Resolver
         $resource = $this->pathfinder->getResource();
 
         $candidates = [
-            "{$appFolder}\\Actions\\{$environment}\\{$context}\\{$resource}\\{$action}{$resource}", // e.g. App\Actions\Api\Admin\StoreOrder
-            "{$appFolder}\\Actions\\Core\\{$action}{$resource}", // e.g. App\Actions\Core\PostValidator
+            "{$appFolder}\\Actions\\{$environment}\\{$context}\\{$resource}\\{$action}{$resource}", // e.g. App\Actions\Api\Admin\Order\StoreOrder
+            "{$appFolder}\\Actions\\Core\\{$action}{$resource}", // e.g. App\Actions\Core\StoreOrder
         ];
 
         return $candidates;

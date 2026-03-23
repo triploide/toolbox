@@ -6,13 +6,13 @@ namespace {{ namespaceRoot }}\Actions\{{ enviroment }}\{{ context }}\{{ resource
 
 use Triploide\Toolbox\Actions\Action;
 
-class Delete{{ resource }} extends Action
+class Destroy{{ resource }} extends Action
 {
     public function handle(): mixed
     {
         $model = $this->model();
 
-        $this->model()->destroy();
+        $this->model()->delete();
 
         return $model;
     }
