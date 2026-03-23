@@ -11,7 +11,7 @@ class ToolboxServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/toolbox.php', 'toolbox');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/toolbox.php', 'toolbox');
     }
 
     public function boot(): void
