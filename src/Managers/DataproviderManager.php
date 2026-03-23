@@ -65,7 +65,7 @@ trait DataproviderManager
 
             $action = $this->action;
 
-            $dataprovider->$action($this->parameters['id'] ?? null);
+            $dataprovider->$action($this->getModelParam());
 
             $retriveMethod = $this->needToReriveModel() ? 'fetchOne' : 'fetchAll';
 
@@ -85,6 +85,14 @@ trait DataproviderManager
         $modelPlaceholder = strtolower(class_basename($this->getModel())); // eg. For Beat model it will be 'beat'
 
         return isset($this->parameters[$modelPlaceholder]) || isset($this->parameters['id']);
+    }
+
+    public function getModelParam() : ?string
+    {
+        $modelPlaceholder = strtolower(class_basename($this->getModel())); // eg. For Beat model it will be 'beat'
+
+
+        return $this->parameters[$modelPlaceholder] ?? $this->parameters['id'] ?? null;
     }
 
     /**

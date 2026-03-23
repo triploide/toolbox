@@ -50,6 +50,6 @@ trait RequestManager
     {
         $resolver = new RequestResolver($this->getPathFinder()); // TODO: Reduce coupling
 
-        return $resolver->getFullyQualifiedName('resource');
+        return $resolver->getFullyQualifiedName($this->action);
     }
 }
