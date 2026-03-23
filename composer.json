@@ -1,5 +1,5 @@
 {
-    "name": "triploide/laravel-toolbox",
+    "name": "triploide/toolbox",
     "version": "0.0.5",
     "description": "A Laravel CRUD toolkit that auto-resolves controllers, dataproviders, repositories, validators, filters, and more by convention.",
     "type": "library",
