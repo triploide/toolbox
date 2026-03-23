@@ -7,7 +7,7 @@ namespace Triploide\Toolbox\Resolvers;
 use Illuminate\Support\Str;
 use Triploide\Toolbox\Pathfinders\Pathfinder;
 
-class ActionResolver extends Resolver
+class RequestResolver extends Resolver
 {
     public function __construct(private Pathfinder $pathfinder)
     {
@@ -23,8 +23,7 @@ class ActionResolver extends Resolver
         $resource = $this->pathfinder->getResource();
 
         $candidates = [
-            "{$appFolder}\\Actions\\{$environment}\\{$context}\\{$resource}\\{$action}{$resource}", // e.g. App\Actions\Api\Admin\StoreOrder
-            "{$appFolder}\\Actions\\Core\\{$action}{$resource}", // e.g. App\Actions\Core\PostValidator
+            "{$appFolder}\\Http\\Requests\\{$environment}\\{$context}\\{$resource}\\{$action}{$resource}Request", // e.g. App\Http\Requests\Api\Admin\StoreOrderRequest
         ];
 
         return $candidates;

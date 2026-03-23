@@ -25,11 +25,14 @@ trait ResponseManager
     {
         $resource = $this->resolveClass('resource');
 
-        $response = ($this->retrievedData instanceof Model) ? new $resource($this->retrievedData) : $resource::collection($this->retrievedData ?? []);
-
-        return $response->setMethod($this->action)
-            ->additional($this->extraResponse($response))
-        ;
+        if ($this->retrievedData instanceof Model) {
+            $response =  new $resource($this->retrievedData);
+            $response->setMethod($this->action);
+        } else {
+            $response = $resource::collection($this->retrievedData ?? []);
+            $response->each->setMethod($this->action);
+        }
+        return $response->additional($this->extraResponse($response));
     }
 
     /**

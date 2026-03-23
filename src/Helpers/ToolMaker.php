@@ -61,11 +61,19 @@ class ToolMaker
         // TODO: refactor
         foreach ($tools as $tool) {
             if ($tool == Tool::ACTION) {
-                foreach (['store', 'update', 'delete'] as $action) {
+                foreach (['store', 'update', 'destroy'] as $action) {
                     if ($stub = $this->getStub($tool->value . '.' . $action)) {
                         $stub = $this->replaceTokens($stub);
 
                         $this->saveActionFile($stub, $tool, $action);
+                    }
+                }
+            } else if ($tool == Tool::REQUEST) {
+                foreach (['store', 'update'] as $action) {
+                    if ($stub = $this->getStub($tool->value . '.' . $action)) {
+                        $stub = $this->replaceTokens($stub);
+
+                        $this->saveRequestFile($stub, $tool, $action);
                     }
                 }
             } else {
@@ -132,9 +140,30 @@ class ToolMaker
     private function saveActionFile(string $stub, Tool $tool, string $action)
     {
         // TODO: refactor
-        $path = app_path($tool->folder() . '/' . $this->enviroment . '/' . $this->context); // e.g app/Actions/Api/Customer
-        $filename = ucfirst($action) . $this->resource . '.php'; // e.g DeleteOrder.php
-        $uri = "$path/$filename"; // e.g app/Actions/Api/Customer/DeleteOrder.php
+        $path = app_path($tool->folder() . '/' . $this->enviroment . '/' . $this->context . '/' . $this->resource); // e.g app/Actions/Api/Customer/Order
+        $filename = ucfirst($action) . $this->resource . '.php'; // e.g DestroyOrder.php
+        $uri = "$path/$filename"; // e.g app/Actions/Api/Customer/Order/DestroyOrder.php
+
+        if (!file_exists($uri)) {
+            if (!is_dir($path)) {
+                mkdir($path, 0744, true);
+            }
+            
+            file_put_contents($uri, $stub);
+        }
+    }
+
+    /**
+     * @param string $stub
+     * @param Tool $tool
+     * @param string $action
+     */
+    private function saveRequestFile(string $stub, Tool $tool, string $action)
+    {
+        // TODO: refactor
+        $path = app_path($tool->folder() . '/' . $this->enviroment . '/' . $this->context . '/' . $this->resource); // e.g app/Http/Request/Api/Customer/Order
+        $filename = ucfirst($action) . $this->resource . 'Request.php'; // e.g UpdateOrderRequest.php
+        $uri = "$path/$filename"; // e.g app/Http/Request/Api/Customer/Order/UpdateOrderRequest.php
 
         if (!file_exists($uri)) {
             if (!is_dir($path)) {

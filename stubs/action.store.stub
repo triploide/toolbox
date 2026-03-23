@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {{ namespaceRoot }}\Actions\{{ enviroment }}\{{ context }};
+namespace {{ namespaceRoot }}\Actions\{{ enviroment }}\{{ context }}\{{ resource }};
 
 use Triploide\Toolbox\Actions\Action;
 

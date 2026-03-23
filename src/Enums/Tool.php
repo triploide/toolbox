@@ -13,8 +13,8 @@ enum Tool: string
     case DATAPROVIDER = 'dataprovider';
     case POLICY = 'policy';
     case REPOSITORY = 'repository';
+    case REQUEST = 'request';
     case RESOURCE = 'resource';
-    case VALIDATOR = 'validator';
 
     public function name(): string
     {
@@ -25,6 +25,7 @@ enum Tool: string
     {
         return match ($this) {
             self::CONTROLLER => 'Http/Controllers',
+            self::REQUEST => 'Http/Requests',
             self::RESOURCE => 'Http/Resources',
             default => Str::of($this->value)->plural()->studly()->__toString()
         };

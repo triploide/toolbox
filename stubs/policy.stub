@@ -4,15 +4,33 @@ declare(strict_types=1);
 
 namespace {{ namespaceRoot }}\Policies\{{ enviroment }}\{{ context }};
 
+use App\Models\{{ resource }};
 use App\Models\User;
 
 class {{ resource }}Policy
 {
-    /**
-     * Create a new policy instance.
-     */
-    public function __construct()
+    public function index(User $user): bool
     {
-        //
+        return true;
+    }
+
+    public function show(User $user, {{ resource }} $tag): bool
+    {
+        return true;
+    }
+
+    public function store(User $user): bool
+    {
+        return true;
+    }
+
+    public function update(User $user, {{ resource }} $tag): bool
+    {
+        return true;
+    }
+
+    public function destroy(User $user, {{ resource }} $tag): bool
+    {
+        return true;
     }
 }

@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Triploide\Toolbox\Http\Resources;
 
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Http\Resources\Json\JsonResource as LaravelResource;
+use Illuminate\Http\Request;
+use JsonSerializable;
 
 class JsonResource extends LaravelResource
 {
@@ -16,14 +19,22 @@ class JsonResource extends LaravelResource
      * 
      * @throws Exception
      */
-    public function setMethod(string $method) : self
+    public function setMethod(string $method): self
     {
         $reflector = new \ReflectionClass(self::class);
-        $methods = array_filter($reflector->getMethods(), fn($method) => $method != 'toArray');
 
-        if (in_array($this->method, $methods)) {
+        $methods = array_filter(
+            $reflector->getMethods(),
+            fn($m) => $m->getName() !== 'toArray'
+        );
+
+        $methodNames = array_map(fn($m) => $m->getName(), $methods);
+
+        if (in_array($method, $methodNames)) {
             throw new \Exception("You cannot use methods of the Illuminate\Http\Resources\Json\JsonResource class");
         }
+
+        $this->method = $method;
 
         return $this;
     }
@@ -48,5 +59,22 @@ class JsonResource extends LaravelResource
         }
 
         return $this->filter((array) $data);
+    }
+
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     */
+    public function toAttributes(Request $request)
+    {
+        if (property_exists($this, 'attributes')) {
+            return $this->attributes;
+        }
+
+        $method = method_exists($this, $this->method) ? $this->method : 'toArray';
+
+        return $this->$method($request);
     }
 }
