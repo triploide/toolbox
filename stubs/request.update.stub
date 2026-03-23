@@ -4,7 +4,7 @@ namespace {{ namespaceRoot }}\Http\Requests\{{ enviroment }}\{{ context }}\{{ re
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class {{ resource }}UpdateRequest extends FormRequest
+class Update{{ resource }}Request extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
