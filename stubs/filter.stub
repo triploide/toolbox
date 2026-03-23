@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace {{ namespaceRoot }}\Filters\{{ enviroment }}\{{ context }};
 
-use Toolbox\Filters\Filter;
+use Triploide\Toolbox\Filters\Filter;
 
 class {{ resource }}Filter extends Filter
 {

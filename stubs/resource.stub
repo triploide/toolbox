@@ -9,16 +9,32 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class {{ resource }}Resource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
-    public function toArray(Request $request): array
+    public function index(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'value' => $this->value,
+
         ];
+    }
+
+    public function show(Request $request): array
+    {
+        return [
+            
+        ];
+    }
+
+    public function store(Request $request): array
+    {
+        return $this->show($request);
+    }
+
+    public function update(Request $request): array
+    {
+        return $this->show($request);
+    }
+
+    public function destroy(Request $request): array
+    {
+        return $this->show($request);
     }
 }

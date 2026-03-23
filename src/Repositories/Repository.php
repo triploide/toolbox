@@ -89,7 +89,7 @@ abstract class Repository
 
         return $this->persist('store', save_in_db: false);
     }
-
+    this
     /**
      * @param Collection|array $data - Data for the persistence of the model
      * @return Model

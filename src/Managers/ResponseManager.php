@@ -27,7 +27,9 @@ trait ResponseManager
 
         $response = ($this->retrievedData instanceof Model) ? new $resource($this->retrievedData) : $resource::collection($this->retrievedData ?? []);
 
-        return $response->additional($this->extraResponse($response));
+        return $response->setMethod($this->action)
+            ->additional($this->extraResponse($response))
+        ;
     }
 
     /**

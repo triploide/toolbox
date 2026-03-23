@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Triploide\Toolbox;
+namespace Triploide\Toolbox\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Triploide\Toolbox\Console\Commands\MakeTool;

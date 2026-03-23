@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace {{ namespaceRoot }}\Repositories\{{ enviroment }}\{{ context }};
 
-use Toolbox\Repositories\Repository;
+use Triploide\Toolbox\Repositories\Repository;
 
 class {{ resource }}Repository extends Repository
 {

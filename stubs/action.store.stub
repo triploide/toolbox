@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace {{ namespaceRoot }}\Actions\{{ enviroment }}\{{ context }};
 
-use Toolbox\Actions\Action;
+use Triploide\Toolbox\Actions\Action;
 
 class Store{{ resource }} extends Action
 {

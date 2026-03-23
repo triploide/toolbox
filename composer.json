@@ -1,6 +1,6 @@
 {
     "name": "triploide/laravel-toolbox",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "A Laravel CRUD toolkit that auto-resolves controllers, dataproviders, repositories, validators, filters, and more by convention.",
     "type": "library",
     "license": "MIT",
@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Triploide\\Toolbox\\ToolboxServiceProvider"
+                "Triploide\\Toolbox\\Providers\\ToolboxServiceProvider"
             ]
         }
     },
