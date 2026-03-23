@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Helpers;
+namespace Triploide\Toolbox\Helpers;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

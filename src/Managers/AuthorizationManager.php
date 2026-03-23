@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Managers;
+namespace Triploide\Toolbox\Managers;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\Model;

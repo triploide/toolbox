@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Contexts;
+namespace Triploide\Toolbox\Contexts;
 
 class ToolCommandContext
 {

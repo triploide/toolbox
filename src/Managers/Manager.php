@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Managers;
+namespace Triploide\Toolbox\Managers;
 
 use Closure;
-use Toolbox\Resolvers\DefaultResolver;
+use Triploide\Toolbox\Resolvers\DefaultResolver;
 
 trait Manager
 {

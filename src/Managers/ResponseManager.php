@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Managers;
+namespace Triploide\Toolbox\Managers;
 
 use Illuminate\Database\Eloquent\Model;
-use Toolbox\Resolvers\ResourceResolver;
+use Triploide\Toolbox\Resolvers\ResourceResolver;
 
 /**
  *

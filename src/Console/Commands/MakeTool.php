@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Console\Commands;
+namespace Triploide\Toolbox\Console\Commands;
 
-use Toolbox\Helpers\ToolMaker;
+use Triploide\Toolbox\Helpers\ToolMaker;
 use Illuminate\Console\Command;
-use Toolbox\Contexts\ToolCommandContext;
-use Toolbox\Enums\Tool;
+use Triploide\Toolbox\Contexts\ToolCommandContext;
+use Triploide\Toolbox\Enums\Tool;
 
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\confirm;

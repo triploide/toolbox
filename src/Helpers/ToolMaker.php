@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Helpers;
+namespace Triploide\Toolbox\Helpers;
 
 use Symfony\Component\Console\Command\Command;
 use Illuminate\Support\Str;
-use Toolbox\Enums\Tool;
+use Triploide\Toolbox\Enums\Tool;
 
 class ToolMaker
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Validators;
+namespace Triploide\Toolbox\Validators;
 
 interface ValidatorContract
 {

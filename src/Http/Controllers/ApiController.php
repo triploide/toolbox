@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Http\Controllers;
+namespace Triploide\Toolbox\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Toolbox\Managers as ManagerTraits;
+use Triploide\Toolbox\Managers as ManagerTraits;
 
 class ApiController extends Controller
 {

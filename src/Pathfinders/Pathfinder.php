@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Pathfinders;
+namespace Triploide\Toolbox\Pathfinders;
 
 use Illuminate\Support\Str;
 

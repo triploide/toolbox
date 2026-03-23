@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Dataproviders;
+namespace Triploide\Toolbox\Dataproviders;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Toolbox;
+namespace Triploide\Toolbox;
 
 use Illuminate\Support\ServiceProvider;
-use Toolbox\Console\Commands\MakeTool;
+use Triploide\Toolbox\Console\Commands\MakeTool;
 
 class ToolboxServiceProvider extends ServiceProvider
 {

@@ -1,6 +1,6 @@
 {
-    "name": "kamecode/toolbox",
-    "version": "0.0.3",
+    "name": "triploide/laravel-toolbox",
+    "version": "0.0.4",
     "description": "A Laravel CRUD toolkit that auto-resolves controllers, dataproviders, repositories, validators, filters, and more by convention.",
     "type": "library",
     "license": "MIT",
@@ -23,13 +23,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Toolbox\\": "src/"
+            "Triploide\\Toolbox\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Toolbox\\ToolboxServiceProvider"
+                "Triploide\\Toolbox\\ToolboxServiceProvider"
             ]
         }
     },

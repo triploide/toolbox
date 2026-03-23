@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Resolvers;
+namespace Triploide\Toolbox\Resolvers;
 
-use Toolbox\Pathfinders\Pathfinder;
+use Triploide\Toolbox\Pathfinders\Pathfinder;
 
 class ModelResolver extends Resolver
 {

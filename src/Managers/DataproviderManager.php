@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Managers;
+namespace Triploide\Toolbox\Managers;
 
-use Toolbox\Dataproviders\CrudDataprovider as Dataprovider;
+use Triploide\Toolbox\Dataproviders\CrudDataprovider as Dataprovider;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;

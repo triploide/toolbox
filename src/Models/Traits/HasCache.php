@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Models\Traits;
+namespace Triploide\Toolbox\Models\Traits;
 
 use Illuminate\Support\Facades\Cache;
-use Toolbox\Dataproviders\QueryCache;
+use Triploide\Toolbox\Dataproviders\QueryCache;
 
 trait HasCache
 {

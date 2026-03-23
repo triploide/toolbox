@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Actions;
+namespace Triploide\Toolbox\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use Toolbox\Helpers\Data;
+use Triploide\Toolbox\Helpers\Data;
 
 abstract class Action
 {

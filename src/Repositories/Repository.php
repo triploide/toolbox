@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Repositories;
+namespace Triploide\Toolbox\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Toolbox\Traits\HasEvents;
-use Toolbox\Helpers\Data;
-use Toolbox\Managers\Manager;
-use Toolbox\Managers\ModelManager;
-use Toolbox\Pathfinders\Pathfinder;
-use Toolbox\Resolvers\ActionResolver;
+use Triploide\Toolbox\Traits\HasEvents;
+use Triploide\Toolbox\Helpers\Data;
+use Triploide\Toolbox\Managers\Manager;
+use Triploide\Toolbox\Managers\ModelManager;
+use Triploide\Toolbox\Pathfinders\Pathfinder;
+use Triploide\Toolbox\Resolvers\ActionResolver;
 
 abstract class Repository
 {

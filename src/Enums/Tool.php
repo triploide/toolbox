@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Enums;
+namespace Triploide\Toolbox\Enums;
 
 use Illuminate\Support\Str;
 

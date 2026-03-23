@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Filters;
+namespace Triploide\Toolbox\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
 

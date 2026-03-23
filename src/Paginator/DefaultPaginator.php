@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Paginator;
+namespace Triploide\Toolbox\Paginator;
 
 
 class DefaultPaginator extends Paginator

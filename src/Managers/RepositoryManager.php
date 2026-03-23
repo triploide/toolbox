@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Managers;
+namespace Triploide\Toolbox\Managers;
 
 use Illuminate\Database\Eloquent\Model;
-use Toolbox\Repositories\Repository;
+use Triploide\Toolbox\Repositories\Repository;
 
 /**
  *

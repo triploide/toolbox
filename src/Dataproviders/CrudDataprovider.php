@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Dataproviders;
+namespace Triploide\Toolbox\Dataproviders;
 
 class CrudDataprovider extends Dataprovider
 {

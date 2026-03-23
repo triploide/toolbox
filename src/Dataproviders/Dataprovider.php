@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Dataproviders;
+namespace Triploide\Toolbox\Dataproviders;
 
-use Toolbox\Helpers\Data;
-use Toolbox\Pathfinders\Pathfinder;
+use Triploide\Toolbox\Helpers\Data;
+use Triploide\Toolbox\Pathfinders\Pathfinder;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Toolbox\Managers\Manager;
-use Toolbox\Managers\ModelManager;
-use Toolbox\Managers\FilterManager;
-use Toolbox\Paginator\Paginator;
+use Triploide\Toolbox\Managers\Manager;
+use Triploide\Toolbox\Managers\ModelManager;
+use Triploide\Toolbox\Managers\FilterManager;
+use Triploide\Toolbox\Paginator\Paginator;
 use Illuminate\Contracts\Pagination\CursorPaginator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 

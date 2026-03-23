@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Paginator;
+namespace Triploide\Toolbox\Paginator;
 
-use Toolbox\Dataproviders\Dataprovider;
+use Triploide\Toolbox\Dataproviders\Dataprovider;
 
 class Paginator
 {

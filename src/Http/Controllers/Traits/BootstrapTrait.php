@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Http\Controllers\Traits;
+namespace Triploide\Toolbox\Http\Controllers\Traits;
 
 trait BootstrapTrait
 {

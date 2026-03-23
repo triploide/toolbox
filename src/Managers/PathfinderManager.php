@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Toolbox\Managers;
+namespace Triploide\Toolbox\Managers;
 
-use Toolbox\Pathfinders\Pathfinder;
+use Triploide\Toolbox\Pathfinders\Pathfinder;
 
 /**
  *
