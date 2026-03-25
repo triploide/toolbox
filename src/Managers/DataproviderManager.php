@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Triploide\Toolbox\Managers;
 
-use Triploide\Toolbox\Dataproviders\CrudDataprovider as Dataprovider;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\LengthAwarePaginator;
+use Triploide\Toolbox\Dataproviders\CrudDataprovider as Dataprovider;
 
 /**
  *
@@ -18,45 +16,22 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 trait DataproviderManager
 {
-    private Model|Collection|LengthAwarePaginator|null $retrievedData = null;
-    public $pagination = null;
+    private mixed $retrievedData = null;
 
     /**
-     * @return Model|Collection|LengthAwarePaginator|null
+     * @return mixed
      */
-    public function retrievedData(): Model|Collection|LengthAwarePaginator|null
+    public function retrievedData(): mixed
     {
         return $this->retrievedData;
     }
 
     /**
-     * @param Dataprovider $dataprovider
-     * @return Collection|LengthAwarePaginator
-     * 
-     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
-     */
-    protected function pagination(Dataprovider $dataprovider): Collection|LengthAwarePaginator
-    {
-        $allowedTypes = ['paginate', 'simplePaginate', 'cursorPaginate' ];
-
-        if (request()->has('pagination')) {
-            $type = request()->input('pagination.type', 'paginate');
-            $type = in_array($type, $allowedTypes) ? $type : 'paginate';
-
-            $response = $this->$type($dataprovider);
-        } else {
-            $response =$dataprovider->get();
-        }
-
-        return $response;
-    }
-
-    /**
      * Retrieve the data from the dataprovider.
      * 
-     * @return Model|Collection|LengthAwarePaginator|null
+     * @return mixed
      */
-    protected function retrieve(): Model|Collection|LengthAwarePaginator|null
+    protected function retrieve(): mixed
     {
         if ($dataprovider = $this->resolveDataprovider()) {
             if (!method_exists($dataprovider, $this->action)) {

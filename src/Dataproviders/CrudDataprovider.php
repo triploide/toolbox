@@ -32,4 +32,37 @@ class CrudDataprovider extends Dataprovider
 
         return $this;
     }
+
+    /**
+     * @param int|string|null $id
+     * @return Dataprovider
+     */
+    public function store($id = null): Dataprovider
+    {
+        return $this->show($id);
+    }
+
+    /**
+     * @param int|string|null $id
+     * @return Dataprovider
+     */
+    public function update($id = null): Dataprovider
+    {
+        return $this->show($id);
+    }
+
+    /**
+     * @param int|string|null $id
+     * @return Dataprovider
+     */
+    public function destroy($id = null): Dataprovider
+    {
+        if ($id) {
+            $this->query()->where('id', $id);
+        }
+
+        return $this;
+    }
+
+
 }
