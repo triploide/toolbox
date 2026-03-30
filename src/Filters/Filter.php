@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Triploide\Toolbox\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 
 /**
  * Abstract class Filter.
@@ -42,6 +43,7 @@ abstract class Filter
     final public function apply(array $filters): void
     {
         foreach ($filters as $filter => $value) {
+            $filter = Str::of($filter)->camel()->append('Filter')->__toString();
             if (method_exists($this, $filter)) {
                 $this->$filter($value);
             }

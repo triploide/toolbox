@@ -8,5 +8,5 @@ use Triploide\Toolbox\Filters\Filter;
 
 class {{ resource }}Filter extends Filter
 {
-
+    
 }

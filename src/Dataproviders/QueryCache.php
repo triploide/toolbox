@@ -7,6 +7,9 @@ namespace Triploide\Toolbox\Dataproviders;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
 
+/**
+ * Experimental
+ */
 class QueryCache
 {
     public static string $prefix = 'toolbox:';
@@ -26,6 +29,7 @@ class QueryCache
             $query->getModel()::class,
             $method,
             $this->sql($query),
+            $this->eagerLoads($query),
             json_encode($args)
         ]));
     }
@@ -65,5 +69,24 @@ class QueryCache
             ->toArray();
 
         return vsprintf(str_replace('?', '%s', $sql), $bindings);
+    }
+
+    protected function eagerLoads(Builder $query): string
+    {
+        $eagerLoads = $query->getEagerLoads();
+
+        if (empty($eagerLoads)) {
+            return '';
+        }
+
+        return collect($eagerLoads)
+            ->map(function ($constraints, $relation) {
+                // Si tiene constraints (closures), los marcamos
+                return is_callable($constraints)
+                    ? $relation . ':closure'
+                    : $relation;
+            })
+            ->sortKeys()
+            ->implode('|');
     }
 }

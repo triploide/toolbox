@@ -13,8 +13,6 @@ use Triploide\Toolbox\Managers\Manager;
 use Triploide\Toolbox\Managers\ModelManager;
 use Triploide\Toolbox\Managers\FilterManager;
 use Triploide\Toolbox\Paginator\Paginator;
-use Illuminate\Contracts\Pagination\CursorPaginator;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 /**
  *
@@ -125,7 +123,7 @@ class Dataprovider
 
     protected function useCache(): bool
     {
-        return config('toolbox.cache.enabled', true);
+        return config('toolbox.cache.enabled', false);
     }
 
     protected function execute($method, $args = [])

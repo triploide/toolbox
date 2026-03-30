@@ -11,6 +11,7 @@ enum Tool: string
     case ACTION = 'action';
     case CONTROLLER = 'controller';
     case DATAPROVIDER = 'dataprovider';
+    case FILTER = 'filter';
     case POLICY = 'policy';
     case REPOSITORY = 'repository';
     case REQUEST = 'request';
