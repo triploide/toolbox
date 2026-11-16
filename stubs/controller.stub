@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespaceRoot }}\Http\Controllers\{{ enviroment }}\{{ context }};
+
+use Triploide\Toolbox\Http\Controllers\ApiController;
+
+class {{ resource }}Controller extends ApiController
+{
+    
+}

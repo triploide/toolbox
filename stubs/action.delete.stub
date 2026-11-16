@@ -1,0 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespaceRoot }}\Actions\{{ enviroment }}\{{ context }};
+
+use Toolbox\Actions\Action;
+
+class Delete{{ resource }} extends Action
+{
+    public function handle(): mixed
+    {
+        $model = $this->model();
+
+        $this->model()->destroy();
+
+        return $model;
+    }
+}

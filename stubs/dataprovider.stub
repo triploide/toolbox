@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespaceRoot }}\Dataproviders\{{ enviroment }}\{{ context }};
+
+use Triploide\Toolbox\Dataproviders\CrudDataprovider;
+
+class {{ resource }}Dataprovider extends CrudDataprovider
+{
+    
+}
