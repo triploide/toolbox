@@ -1,6 +1,6 @@
 {
     "name": "triploide/toolbox",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "A Laravel CRUD toolkit that auto-resolves controllers, dataproviders, repositories, validators, filters, and more by convention.",
     "type": "library",
     "license": "MIT",
